@@ -16,6 +16,7 @@ spring:
   h2:
     console:
       enabled: true
+      path: /api/v1/auth/h2-console
 token:
   signing:
     key: 4B28E7082C7773B592BB16CFE00B6EBA1F78BE98E61B3F1BF6BBD63F444F58C4

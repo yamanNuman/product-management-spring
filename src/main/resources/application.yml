@@ -16,3 +16,6 @@ spring:
   h2:
     console:
       enabled: true
+token:
+  signing:
+    key: 4B28E7082C7773B592BB16CFE00B6EBA1F78BE98E61B3F1BF6BBD63F444F58C4

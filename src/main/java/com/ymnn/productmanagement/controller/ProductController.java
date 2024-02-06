@@ -3,6 +3,8 @@ package com.ymnn.productmanagement.controller;
 import com.ymnn.productmanagement.entity.Product;
 import com.ymnn.productmanagement.exception.ProductNotFoundException;
 import com.ymnn.productmanagement.repository.ProductRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,6 +16,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
+@SecurityRequirement(name = "Bearer Authentication")
+@Tag(name = "Product", description = "Product information transactions.")
 public class ProductController {
     private final ProductRepository productRepository;
 

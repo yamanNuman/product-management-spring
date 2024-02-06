@@ -5,6 +5,8 @@ import com.ymnn.productmanagement.entity.Product;
 import com.ymnn.productmanagement.exception.ProductNotFoundException;
 import com.ymnn.productmanagement.repository.PriceRepository;
 import com.ymnn.productmanagement.repository.ProductRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,6 +19,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
+@SecurityRequirement(name = "Bearer Authentication")
+@Tag(name = "Price", description = "Product pricing processes.")
 public class PriceController {
     private final PriceRepository priceRepository;
     private final ProductRepository productRepository;

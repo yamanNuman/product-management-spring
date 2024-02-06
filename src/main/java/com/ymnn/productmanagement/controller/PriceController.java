@@ -11,6 +11,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -48,6 +49,7 @@ public class PriceController {
         return new ResponseEntity<>(price,HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping(path = "/product/{id}/price")
     public ResponseEntity<Price> createPrice(@PathVariable("id") int id,@Valid @RequestBody Price price){
         Optional<Product> product = productRepository.findById(id);
@@ -59,6 +61,7 @@ public class PriceController {
         return new ResponseEntity<>(price, HttpStatus.CREATED);
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PutMapping("/product/{id}/price/{productId}")
     public ResponseEntity<Price> updatePriceByProductId(@PathVariable("id") int id, @PathVariable("productId") int productId,@RequestBody Price price) {
         Optional<Product> product = productRepository.findById(id);
@@ -77,6 +80,7 @@ public class PriceController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping(path = "/product/price/{productId}")
     public ResponseEntity<String> deletePricesByProductId(@PathVariable("productId") int productId){
         Optional<Product> product = productRepository.findById(productId);
@@ -87,6 +91,7 @@ public class PriceController {
         return ResponseEntity.ok("All record deleted.");
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping(path = "/product/{id}/price/{price_id}")
     public ResponseEntity<String> deletePriceByPriceId(@PathVariable("id") int id, @PathVariable("price_id") int priceId){
         Optional<Product> product = productRepository.findById(id);

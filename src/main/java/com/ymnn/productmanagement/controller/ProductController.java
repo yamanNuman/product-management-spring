@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,12 +33,14 @@ public class ProductController {
         return  ResponseEntity.ok(product);
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping(path = "/product")
     public ResponseEntity<Product> createProduct(@Valid @RequestBody Product product) {
         productRepository.save(product);
         return new ResponseEntity<>(product, HttpStatus.CREATED);
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PutMapping(path = "/product/{id}")
     public ResponseEntity<Product> updateProduct(@Valid @RequestBody Product product, @PathVariable("id") int id) {
         Product updateProduct =  productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product not found with the given id : " + id));
@@ -48,6 +51,7 @@ public class ProductController {
         return new ResponseEntity<>(updateProduct,HttpStatus.OK);
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping(path = "/product/{id}")
     public ResponseEntity<HttpStatus> deleteProduct(@PathVariable("id") int id) {
         Product product = productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product not found with the given id : " + id));

@@ -1,4 +1,4 @@
-.container {
+.signup-container {
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -9,7 +9,7 @@
     padding-bottom: 30px;
 }
 
-.header {
+.signup-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,27 +18,27 @@
     margin-top: 30px;
 }
 
-.text {
+.signup-text {
     color: #2f3e46;
     font-size: 48px;
     font-weight: 700;
 }
 
-.underline {
+.signup-underline {
     width: 61px;
     height: 6px;
     background: #2f3e46;
     border-radius: 9px;
 }
 
-.inputs {
+.signup-inputs {
     margin-top: 55px;
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-.input {
+.signup-input {
     display: flex;
     align-items: center;
     margin: auto;
@@ -48,11 +48,11 @@
     border-radius: 6px;
 }
 
-.input img {
+.signup-input img {
     margin: 0px 30px;
 }
 
-.input input {
+.signup-input input {
     height: 50px;
     width: 400px;
     background: transparent;
@@ -62,13 +62,13 @@
     font-size: 19px;
 }
 
-.submit-container {
+.signupsubmit-container {
     display: flex;
     gap: 30px;
-    margin: 60px auto;
+    margin: 30px auto;
 }
 
-.submit {
+.signup-submit {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,4 +1,4 @@
-.container {
+.login-container {
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -9,7 +9,7 @@
     padding-bottom: 30px;
 }
 
-.header {
+.login-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,41 +18,41 @@
     margin-top: 30px;
 }
 
-.text {
+.login-text {
     color: #2f3e46;
     font-size: 48px;
     font-weight: 700;
 }
 
-.underline {
+.login-underline {
     width: 61px;
     height: 6px;
     background: #2f3e46;
     border-radius: 9px;
 }
 
-.inputs {
+.login-inputs {
     margin-top: 55px;
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-.input {
+.login-input {
     display: flex;
     align-items: center;
     margin: auto;
     width: 480px;
-    height: 80px;
+    height: 60px;
     background: #dee2e6;
     border-radius: 10px;
 }
 
-.input img {
+.login-input img {
     margin: 0px 30px;
 }
 
-.input input {
+.login-input input {
     height: 50px;
     width: 400px;
     background: transparent;
@@ -62,13 +62,13 @@
     font-size: 19px;
 }
 
-.submit-container {
+.login-submit-container {
     display: flex;
     gap: 30px;
-    margin: 60px auto;
+    margin: 30px auto;
 }
 
-.submit {
+.login-submit {
     display: flex;
     justify-content: center;
     align-items: center;

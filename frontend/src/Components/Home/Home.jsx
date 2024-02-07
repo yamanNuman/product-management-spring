@@ -1,5 +1,6 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
+import './Home.css'
 
 const Home = () => {
 
@@ -12,14 +13,14 @@ const Home = () => {
     }
     return (
         <div>
-            <div className='container'>
-                <div className='header'>
-                    <div className='text'>Product Management</div>
-                    <div className="underline"></div>
+            <div className='home-container'>
+                <div className='home-header'>
+                    <div className='home-text'>Product Management</div>
+                    <div className="home-underline"></div>
                 </div>
-                <div className="submit-container">
-                    <div className="submit" onClick={navigateLogin}>Login</div>
-                    <div className="submit" onClick={navigateSignUp}>Sign Up</div>
+                <div className="home-submit-container">
+                    <div className="home-submit" onClick={navigateLogin}>Login</div>
+                    <div className="home-submit" onClick={navigateSignUp}>Sign Up</div>
                 </div>
             </div>
         </div>

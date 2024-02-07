@@ -1,15 +1,15 @@
-.container {
+.home-container {
     display: flex;
     flex-direction: column;
     margin: auto;
     margin-top: 200px;
-    width: 600px;
+    width: 750px;
     background: #cad2c5;
     border-radius: 10px;
     padding-bottom: 30px;
 }
 
-.header {
+.home-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,52 +18,26 @@
     margin-top: 30px;
 }
 
-.text {
+.home-text {
     color: #2f3e46;
     font-size: 48px;
     font-weight: 700;
 }
 
-.underline {
+.home-underline {
     width: 61px;
     height: 6px;
     background: #2f3e46;
     border-radius: 9px;
 }
 
-.inputs {
-    margin-top: 55px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.input {
-    display: flex;
-    align-items: center;
-    margin: auto;
-    width: 480px;
-    height: 80px;
-    background: #dee2e6;
-    border-radius: 10px;
-}
-.input input {
-    height: 50px;
-    width: 400px;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #2f3e46;
-    font-size: 19px;
-}
-
-.submit-container {
+.home-submit-container {
     display: flex;
     gap: 30px;
     margin: 60px auto;
 }
 
-.submit {
+.home-submit {
     display: flex;
     justify-content: center;
     align-items: center;

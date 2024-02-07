@@ -30,7 +30,7 @@ public class AuthenticationService {
                 .build();
         userRepository.save(user);
         var jwt = jwtService.generateToken(user);
-        return AuthenticationResponse.builder().token(jwt).build();
+        return AuthenticationResponse.builder().accessToken(jwt).build();
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
@@ -38,7 +38,7 @@ public class AuthenticationService {
                 var user = userRepository.findByEmail(request.getEmail())
                         .orElseThrow(() -> new IllegalArgumentException("Invalid email or password"));
                 var jwt = jwtService.generateToken(user);
-                return AuthenticationResponse.builder().token(jwt).build();
+                return AuthenticationResponse.builder().accessToken(jwt).build();
 
     }
 }

@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import {jwtDecode} from "jwt-decode";
 import axios from "axios";
+import ColorSchemesExample from "../Navbar/Navbar";
 
 const Welcome = () => {
+
     const [products,setProducts] = useState(null);
     async function fetchData() {
         const result = await axios.get('http://localhost:8080/api/v1/products');
@@ -22,6 +24,7 @@ const Welcome = () => {
     const firstname = data.sub;
     return (
         <div>
+            <ColorSchemesExample></ColorSchemesExample>
             <h1>Welcome {firstname}</h1>
             <div><button onClick={fetchData}>Call Spring</button></div>
             <div>{JSON.stringify(products)}</div>

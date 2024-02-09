@@ -28,7 +28,14 @@ const Welcome = () => {
         error => {
             return Promise.reject(error);
         }
-    )
+    );
+    function deleteProduct(e,id) {
+        e.preventDefault();
+        axios.delete(`http://localhost:8080/api/v1/product/${id}`)
+            .then((response) => {console.log(response.data)})
+            .catch((error) => { return error});
+        window.location.reload();
+    }
     const userToken = localStorage.getItem('accessToken');
     const data = jwtDecode(userToken);
     const firstname = data.sub;
@@ -47,6 +54,7 @@ const Welcome = () => {
                     <th>Stock</th>
                     <th>Price</th>
                     <th>Date</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -58,6 +66,13 @@ const Welcome = () => {
                         <td>{product.stock}</td>
                         <td>{product.price[product.price.length-1].price}</td>
                         <td>{product.price[product.price.length-1].date}</td>
+                        <td className="col-md-2">
+                            <button onClick={(e) => deleteProduct(e,product.id)} className="btn btn-danger">Delete</button>
+                            <button onClick={(e) => {
+                                e.preventDefault();
+                                window.location.href = `/update/${product.id}`
+                            }} className="btn btn-warning">Update</button>
+                        </td>
                     </tr>
                 })
                 }

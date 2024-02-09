@@ -1,0 +1,83 @@
+.update-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+    width: 600px;
+    background: #cad2c5;
+    border-radius: 10px;
+    padding-bottom: 30px;
+}
+
+.update-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.update-text {
+    color: #2f3e46;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.update-underline {
+    width: 61px;
+    height: 6px;
+    background: #2f3e46;
+    border-radius: 9px;
+}
+
+.update-inputs {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.update-input {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 480px;
+    height: 60px;
+    background: #dee2e6;
+    border-radius: 6px;
+}
+
+.update-input img {
+    margin: 0px 30px;
+}
+
+.update-input input {
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #2f3e46;
+    font-size: 19px;
+}
+
+.updatesubmit-container {
+    display: flex;
+    gap: 30px;
+    margin: 30px auto;
+}
+
+.update-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: #dee2e6;
+    background: #2f3e46;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}

@@ -4,6 +4,7 @@ import SignUp from "./Components/SignUp/SignUp";
 import Home from "./Components/Home/Home";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Welcome from "./Components/Welcome/Welcome";
+import Update from "./Components/Update/Update";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
                 <Route path="/login" element={<Login/>} />
                 <Route path="/signup" element={<SignUp/>} />
                 <Route path="/welcome" element={<Welcome/>} />
+                <Route path="/update/:id" element={<Update />} />
             </Routes>
         </BrowserRouter>
     </div>

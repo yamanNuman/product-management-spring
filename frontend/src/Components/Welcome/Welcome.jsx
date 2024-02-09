@@ -72,6 +72,10 @@ const Welcome = () => {
                                 e.preventDefault();
                                 window.location.href = `/update/${product.id}`
                             }} className="btn btn-warning">Update</button>
+                            <button onClick={(e) => {
+                                e.preventDefault();
+                                window.location.href = `/update-price/${product.id}`
+                            }} className="btn btn-warning">Update Price</button>
                         </td>
                     </tr>
                 })

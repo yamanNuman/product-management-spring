@@ -3,18 +3,17 @@ import './Update.css'
 import axios from "axios";
 import {useParams} from "react-router-dom";
 
-const Update = () => {
+const UpdatePrice = () => {
     const {id} = useParams();
     const [values,setValues] = useState({
-        id:id,
-        name: '',
-        supplier: '',
-        stock:''
+        id:'',
+        price: '',
+        date: ''
     })
-    const userToken = localStorage.getItem('accessToken');
+    const token = localStorage.getItem('accessToken');
     axios.interceptors.request.use(
         config => {
-            config.headers.authorization = `Bearer ${userToken}`;
+            config.headers.authorization = `Bearer ${token}`;
             return config;
         },
         error => {
@@ -22,16 +21,16 @@ const Update = () => {
         }
     );
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/v1/product/${id}`)
+        axios.get(`http://localhost:8080/api/v1/product/${id}/price/most-recent`)
             .then((response) => {
-                setValues({...values, name: response.data.name, supplier: response.data.supplier,stock: response.data.stock})
+                setValues({...values,id: response.data.id, price: response.data.price, date: response.data.date})
             })
             .catch((error) => console.log(error));
     },[])
 
-    function updateProduct(e) {
+    function updateProductPrice(e) {
         e.preventDefault();
-        axios.put(`http://localhost:8080/api/v1/product/${id}`,values)
+        axios.put(`http://localhost:8080/api/v1/product/${id}/price/${values.id}`,values)
             .then((response) => {
                 window.location.href = '/welcome';
             })
@@ -41,26 +40,23 @@ const Update = () => {
         <div>
             <div className='update-container'>
                 <div className='update-header'>
-                    <div className='update-text'>Update Product</div>
+                    <div className='update-text'>Update Product Price</div>
                     <div className="update-underline"></div>
                 </div>
                 <div className='update-inputs'>
                     <div className='update-input'>
-                        <input type="text" placeholder="Product Name" value={values.name} onChange={(e) => setValues({...values,name: e.target.value})}/>
+                        <input type="number" placeholder="Price" value={values.price} onChange={(e) => setValues({...values,price: e.target.value})}/>
                     </div>
                     <div className='update-input'>
-                        <input type="text" placeholder="Supplier" value={values.supplier} onChange={(e) => setValues({...values,supplier: e.target.value})}/>
-                    </div>
-                    <div className='update-input'>
-                        <input type="number" placeholder="Stock" value={values.stock} onChange={(e) => setValues({...values,stock: e.target.value})}/>
+                        <input type="date" placeholder="Date" value={values.date} onChange={(e) => setValues({...values,date: e.target.value})}/>
                     </div>
                 </div>
                 <div className="updatesubmit-container">
-                    <div onClick={(e) => {updateProduct(e)}} className="update-submit">Update</div>
+                    <div onClick={(e) => {updateProductPrice(e)}} className="update-submit">Update</div>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Update;
+export default UpdatePrice;

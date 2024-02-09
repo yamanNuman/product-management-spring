@@ -44,6 +44,10 @@ const Welcome = () => {
             <ColorSchemesExample></ColorSchemesExample>
 
             <h1>Welcome {firstname}</h1>
+           <button onClick={(e) => {
+               e.preventDefault()
+               window.location.href = '/add-product'
+           }} className="btn btn-success">Add Product</button>
                 <h1>Products</h1>
            <table className="table table-striped table-dark">
                 <thead>
@@ -66,7 +70,7 @@ const Welcome = () => {
                         <td>{product.stock}</td>
                         <td>{product.price[product.price.length-1].price}</td>
                         <td>{product.price[product.price.length-1].date}</td>
-                        <td className="col-md-2">
+                        <td className="col-md-4">
                             <button onClick={(e) => deleteProduct(e,product.id)} className="btn btn-danger">Delete</button>
                             <button onClick={(e) => {
                                 e.preventDefault();
@@ -76,6 +80,10 @@ const Welcome = () => {
                                 e.preventDefault();
                                 window.location.href = `/update-price/${product.id}`
                             }} className="btn btn-warning">Update Price</button>
+                            <button onClick={(e) => {
+                                e.preventDefault();
+                                window.location.href = `/add-price/${product.id}`
+                            }} className="btn btn-success">Add Price</button>
                         </td>
                     </tr>
                 })

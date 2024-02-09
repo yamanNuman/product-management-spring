@@ -6,6 +6,8 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Welcome from "./Components/Welcome/Welcome";
 import Update from "./Components/Update/Update";
 import UpdatePrice from "./Components/Update/UpdatePrice";
+import AddProduct from "./Components/Create/AddProduct";
+import AddPrice from "./Components/Create/AddPrice";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
                 <Route path="/welcome" element={<Welcome/>} />
                 <Route path="/update/:id" element={<Update />} />
                 <Route path="/update-price/:id" element={<UpdatePrice />} />
+                <Route path="/add-product" element={<AddProduct />} />
+                <Route path="/add-price/:id" element={<AddPrice />}/>
             </Routes>
         </BrowserRouter>
     </div>

@@ -8,6 +8,9 @@ import Swal from "sweetalert2";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -20,9 +23,11 @@ const Login = () => {
            const res = await axios.post('http://localhost:8080/api/v1/auth/authenticate',payload);
            localStorage.setItem('accessToken',res.data.accessToken)
             sweetAlertSuccess();
+
         } catch (error) {
             sweetAlertError();
             return error;
+
         }
     }
     function sweetAlertSuccess() {

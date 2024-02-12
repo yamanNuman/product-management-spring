@@ -47,7 +47,7 @@ Second Step - Authentication and Receiving Token
 ```bash
 /api/v1/auth/authenticate
 ```
-![Register](images/register.png)
+![Register](images/register.PNG)
 Then, click on the Authorize button in the Swagger interface and enter the given token. Now you can use APIs. However, you must log in as admin for POST, PUT, DELETE operations.
 
 You can view previously saved users.

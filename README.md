@@ -60,15 +60,19 @@ Password : root
 admin@admin.com
 admin
 ```
+![Users](images/users.PNG)
 
 OR
 
-You can also log in and register from the interface.
+You can also log in and register from the UI.
 ```bash
 http://localhost:3000/
 http://localhost:3000/login
 http://localhost:3000/signup
 ```
+![Welcome](images/start.PNG)
+![Login](images/login.PNG)
+![SignUp](images/signup.PNG)
 
 In the UI, you first add the product and add the price to the product externally. The most current price of each product is listed. Updates can be made for the product and product price.
 ## API Reference
